@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:51:17 by crepou            #+#    #+#             */
-/*   Updated: 2023/12/06 16:14:24 by crepou           ###   ########.fr       */
+/*   Updated: 2023/12/07 16:15:10 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Span
 		Span &operator=(Span const &obj);
 
 		void	addNumber(int n);
+		void	addNumber(std::vector<int> vc);
 		int		shortestSpan(void);
 		int		longestSpan(void);
 

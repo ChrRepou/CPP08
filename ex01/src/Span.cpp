@@ -6,7 +6,7 @@
 /*   By: crepou <crepou@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:53:36 by crepou            #+#    #+#             */
-/*   Updated: 2023/12/06 16:15:32 by crepou           ###   ########.fr       */
+/*   Updated: 2023/12/07 16:33:30 by crepou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,21 @@ void Span::addNumber(int n)
 	this->_stack.push_back(n);
 	this->_index++;
 	return;
+}
+
+void Span::addNumber(std::vector<int> vc)
+{
+	if (this->_size < vc.size())
+		throw std::exception();
+	std::vector<int>::iterator start = vc.begin();
+	std::vector<int>::iterator end = vc.end();
+	while (start != end)
+	{
+		this->_size--;
+		this->_stack.push_back(*start);
+		this->_index++;
+		start++;
+	}
 }
 
 int Span::shortestSpan(void)
